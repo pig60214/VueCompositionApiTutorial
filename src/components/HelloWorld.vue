@@ -4,10 +4,10 @@
   <button @click="clickButton" :disabled="button.isDisable"> {{ button.name }} </button>
 </template>
 
-<script>
-import { computed, reactive, ref } from 'vue';
+<script lang='ts'>
+import { computed, defineComponent, reactive, ref } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'HelloWorld',
   props: {
     framework: String,
@@ -26,7 +26,6 @@ export default {
       isDisable: false,
     };
     const button = reactive(buttonData);
-    console.log(button); // no need `.value` to get value
 
     return {
       syntax,
@@ -34,5 +33,5 @@ export default {
       button,
     };
   },
-};
+});
 </script>
