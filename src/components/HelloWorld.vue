@@ -6,6 +6,7 @@
 
 <script lang='ts'>
 import { computed, defineComponent, reactive, ref } from 'vue';
+import Button from '@/interface/button';
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -21,7 +22,7 @@ export default defineComponent({
       alert(alertMsg.value);
     };
 
-    const buttonData = {
+    const buttonData: Button = {
       name: 'Button',
       isDisable: false,
     };
