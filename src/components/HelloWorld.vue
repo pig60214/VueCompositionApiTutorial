@@ -26,12 +26,12 @@ export default {
     },
   },
   setup() {
-    const syntax = ref('Composition API');
+    let syntax = 'Composition API';
 
-    const alertMsg = computed(() => `You are using ${syntax.value}`);
+    const alertMsg = computed(() => `You are using ${syntax}`);
     console.log(alertMsg.value); // use `.value` to get value
 
-    setTimeout(() => { syntax.value = 'Composition API, Yeah !!'; console.log(alertMsg.value); }, 3000);
+    setTimeout(() => { syntax = 'Composition API, Yeah !!'; console.log(alertMsg.value); }, 3000);
 
     return {
       syntax,
