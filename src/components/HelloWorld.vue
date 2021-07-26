@@ -31,10 +31,10 @@ export default {
     },
   },
   setup() {
-    const syntax = ref('Composition API');
-    console.log(syntax.value); // use `.value` to get value
+    let syntax = 'Composition API';
+    console.log(syntax); // use `.value` to get value
 
-    setTimeout(() => { syntax.value = 'Composition API, Yeah !!'; console.log(syntax.value); }, 3000);
+    setTimeout(() => { syntax = 'Composition API, Yeah !!'; console.log(syntax); }, 3000);
 
     return {
       syntax,
