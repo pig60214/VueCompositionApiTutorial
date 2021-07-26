@@ -20,21 +20,19 @@ export default {
       },
     };
   },
-  methods: {
-    clickButton() {
-      alert(this.alertMsg);
-    },
-  },
   setup(props) {
     const syntax = ref('Composition API');
 
     const alertMsg = computed(() => `You are using ${syntax.value} of ${props.framework}`);
-    console.log(alertMsg.value); // use `.value` to get value
+
+    const clickButton = () => {
+      alert(alertMsg.value);
+    };
 
     return {
       syntax,
-      alertMsg,
+      clickButton,
     };
-  }
+  },
 };
 </script>
