@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -12,7 +14,6 @@ export default {
   },
   data() {
     return {
-      syntax: 'Option API',
       button: {
         name: 'Button',
         isDisable: false,
@@ -29,5 +30,13 @@ export default {
       alert(this.alertMsg);
     },
   },
+  setup() {
+    const syntax = ref('Composition API');
+    console.log(syntax.value); // use `.value` to get value
+
+    return {
+      syntax,
+    };
+  }
 };
 </script>
