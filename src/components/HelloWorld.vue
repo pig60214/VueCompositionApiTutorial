@@ -34,6 +34,8 @@ export default {
     const syntax = ref('Composition API');
     console.log(syntax.value); // use `.value` to get value
 
+    setTimeout(() => { syntax.value = 'Composition API, Yeah !!'; console.log(syntax.value); }, 3000);
+
     return {
       syntax,
     };
