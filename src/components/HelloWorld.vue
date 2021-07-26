@@ -25,10 +25,10 @@ export default {
       alert(this.alertMsg);
     },
   },
-  setup() {
+  setup(props) {
     const syntax = ref('Composition API');
 
-    const alertMsg = computed(() => `You are using ${syntax.value}`);
+    const alertMsg = computed(() => `You are using ${syntax.value} of ${props.framework}`);
     console.log(alertMsg.value); // use `.value` to get value
 
     return {
