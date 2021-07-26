@@ -31,6 +31,8 @@ export default {
     const alertMsg = computed(() => `You are using ${syntax.value}`);
     console.log(alertMsg.value); // use `.value` to get value
 
+    setTimeout(() => { syntax.value = 'Composition API, Yeah !!'; console.log(alertMsg.value); }, 3000);
+
     return {
       syntax,
       alertMsg,
