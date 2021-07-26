@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 
 export default {
   name: 'HelloWorld',
@@ -25,8 +25,8 @@ export default {
       name: 'Button',
       isDisable: false,
     };
-    const button = ref(buttonData);
-    console.log(button.value); // use `.value` to get value
+    const button = reactive(buttonData);
+    console.log(button); // no need `.value` to get value
 
     return {
       syntax,
