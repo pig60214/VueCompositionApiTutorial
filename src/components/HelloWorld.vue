@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export default {
   name: 'HelloWorld',
@@ -20,11 +20,6 @@ export default {
       },
     };
   },
-  computed: {
-    alertMsg() {
-      return `You are using ${this.syntax} of ${this.framework}`;
-    },
-  },
   methods: {
     clickButton() {
       alert(this.alertMsg);
@@ -32,10 +27,13 @@ export default {
   },
   setup() {
     const syntax = ref('Composition API');
-    console.log(syntax.value); // use `.value` to get value
+
+    const alertMsg = computed(() => `You are using ${syntax.value}`);
+    console.log(alertMsg.value); // use `.value` to get value
 
     return {
       syntax,
+      alertMsg,
     };
   }
 };
