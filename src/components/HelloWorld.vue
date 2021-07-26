@@ -12,14 +12,6 @@ export default {
   props: {
     framework: String,
   },
-  data() {
-    return {
-      button: {
-        name: 'Button',
-        isDisable: false,
-      },
-    };
-  },
   setup(props) {
     const syntax = ref('Composition API');
 
@@ -29,9 +21,17 @@ export default {
       alert(alertMsg.value);
     };
 
+    const buttonData = {
+      name: 'Button',
+      isDisable: false,
+    };
+    const button = ref(buttonData);
+    console.log(button.value); // use `.value` to get value
+
     return {
       syntax,
       clickButton,
+      button,
     };
   },
 };
