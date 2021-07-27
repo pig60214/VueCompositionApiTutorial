@@ -7,6 +7,7 @@
 <script lang='ts'>
 import { computed, defineComponent, reactive, ref, watch } from 'vue';
 import Button from '@/interface/button';
+import useButton from '@/composables/useButton';
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -20,17 +21,13 @@ export default defineComponent({
 
     const clickButton = () => {
       alert(alertMsg.value);
-    };
+    };    
 
     const buttonData: Button = {
       name: 'Button',
       isDisable: false,
     };
-    const button = ref(buttonData);
-    console.log(button.value); // use `.value` to get value
-    setTimeout(() => { button.value = {name: 'Use `button.value` to Change', isDisable: false}; console.log(button.value.name) }, 3000);
-
-    watch(button, ()=> {console.log('Change!!')}); // Will console
+    const { button } = useButton(buttonData);
 
     return {
       syntax,
