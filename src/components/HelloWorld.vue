@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, reactive, ref } from 'vue';
+import { computed, defineComponent, reactive, ref, watch } from 'vue';
 import Button from '@/interface/button';
 
 export default defineComponent({
@@ -29,10 +29,8 @@ export default defineComponent({
     const button = ref(buttonData);
     console.log(button.value); // use `.value` to get value
     setTimeout(() => { button.value.name = 'Use `button.name` to Change'; console.log(button.value.name) }, 3000);
-    let { name } = button.value
-    setTimeout(() => { name = 'Use `name` to Change'; console.log(name) }, 6000);
 
-
+    watch(button, ()=> {console.log('Change!!')}); // Won't console
 
     return {
       syntax,
