@@ -26,7 +26,13 @@ export default defineComponent({
       name: 'Button',
       isDisable: false,
     };
-    const button = reactive(buttonData);
+    const button = ref(buttonData);
+    console.log(button.value); // use `.value` to get value
+    setTimeout(() => { button.value.name = 'Use `button.name` to Change'; console.log(button.value.name) }, 3000);
+    let { name } = button.value
+    setTimeout(() => { name = 'Use `name` to Change'; console.log(name) }, 6000);
+
+
 
     return {
       syntax,
